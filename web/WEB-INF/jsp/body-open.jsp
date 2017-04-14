@@ -1,6 +1,6 @@
 <%@ page import="java.util.*,
-	vn.edu.vnuk.contacts.dao.*,
-	vn.edu.vnuk.contacts.model.*" 
+	vn.edu.vnuk.tasks.dao.*,
+	vn.edu.vnuk.tasks.model.*" 
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 

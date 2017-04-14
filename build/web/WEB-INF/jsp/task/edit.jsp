@@ -1,30 +1,33 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 
 <c:import url="../body-open.jsp" />
-
-        <h1>Modify tasks</h1>
-        <hr />
-
-        <form action="controller?object=tasks&action=Update" method="post">
-            Id : ${tasks.id}<br/>
-            <input type="hidden" name="id" value="${tasks.id}" /><br />
-            Id : <input type="text" name="id" value="${tasks.id}" /><br />
-            Description : <input type="text" name="description" value="${tasks.description}" /><br />
-            Complete : <input type="text" name="complete" value="${tasks.complete}" /><br />
-            Date of completion : <input type="text" class="my-date-field" name="date_of_completion" id="date_of_completion" value=<fmt:formatDate value="${tasks.dateOfCompletion.time}" pattern="dd/MM/yyyy" /> /><br />
-            <br/>
-            <button type="submit" class="btn btn-success">
-                <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Save
-            </button>
-            <a href="controller?object=tasks&action=Show&id=${tasks.id}" class="btn btn-default">
-                <i class="fa fa-times-rectangle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Cancel
-            </a>
-        </form>
+    <h3>Update task n° ${task.id}</h3>
+    <form:errors path="task.description" cssStyle="color: red;"/>
+    <form action="updateTask" method="post">
+        <input type="hidden" name="id" value="${task.id}" />
+        Description : <br />
         
-        <c:import url="../footer.jsp" />
-        <c:import url="../scripts.jsp" />
+        <textarea name="description" rows="5" cols="100">${task.description}</textarea>
+        <br /><br />
         
-    </body>
-
-</html>
+        Achieved ? <input type="checkbox" name="achieved" value="true" ${task.achieved? 'checked' : '' }/>
+        <br /><br />
+        
+        Date of achievement : <br />
+        <input type="text" name="dateOfAchievement" class="my-date-field"
+            value="<fmt:formatDate value="${task.dateOfAchievement.time}"
+            pattern="dd/MM/yyyy" />"
+        />
+        <br /><br />
+        
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-repeat" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Update
+        </button>
+        <a class="btn btn-default" href="tasks">
+            <i class="fa fa-times-rectangle-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Cancel
+        </a>
+    </form>
+<c:import url="../body-close.jsp" />

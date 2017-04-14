@@ -1,2 +1,2 @@
 <hr />
-<img src="resources/img/Banner.jpg" />
+<img src="resources/img/foot.jpg" />

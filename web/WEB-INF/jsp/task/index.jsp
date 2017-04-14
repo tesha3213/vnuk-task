@@ -3,51 +3,64 @@
 
 <c:import url="../body-open.jsp" />
 
-    <a href="controller?object=tasks&action=New" class="btn btn-primary">
-        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create a new tasks
+    <a href="addTask" class="btn btn-primary">
+        <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;New task
     </a>
-    <br/>
-    <br/>
 
-    <table class="table table-bordered table-responsive table-striped table-hover">
+    <br /> <br />
 
+    <table class="table table-bordered table-hover table-responsive table-striped">
         <thead>
             <tr>
-                <th><i>Actions</i></th>
+                <th></th>
                 <th>Id</th>
                 <th>Description</th>
-                <th>Complete</th>
-                <th>Date of completion</th>
+                <th>Status</th>
+                <th>Date of Completion</th>
             </tr>
         </thead>
 
         <tbody>
 
-            <c:forEach var="tasks" items="${tasks}">
+            <c:forEach var="task" items="${tasks}">
 
                 <tr>
                     <td>
-                        <a href="controller?object=tasks&action=Show&id=${tasks.id}" class="btn btn-xs btn-info">
-                            <i class="fa fa-search" aria-hidden="true" data-toggle="tooltip" title="Show" data-placement="bottom"></i>
+                        <c:if test="${task.complete eq false}">
+                            <button type="button" 
+                                    id="task-${task.id}" 
+                                    class="btn btn-xs btn-success my-task" 
+                                    value="${task.id}"
+                                    data-toggle="tooltip" 
+                                    title="Complete task" 
+                                    data-placement="bottom">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                            </button>
+                        </c:if>
+                        
+                        <a href="editTask?id=${task.id}" class="btn btn-xs btn-primary" 
+                           data-toggle="tooltip" title="Edit" data-placement="bottom">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        <a href="controller?object=tasks&action=Delete&id=${tasks.id}" class="btn btn-xs btn-danger">
-                            <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" title="Delete" data-placement="bottom"></i>
+                        <a href="deleteTask/${task.id}" class="btn btn-xs btn-danger" 
+                           data-toggle="tooltip" title="Delete" data-placement="bottom">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                     </td>
-                    <td>${tasks.id}</td>
-               
-                   
-                    <td>${tasks.complete}</td>
-                    <%-- <td>${tasks.dateOfBirth.time}</td> --%>
-                    <td>
-                        <fmt:formatDate value="${tasks.dateOfCompletion.time}" pattern="dd/MM/yyyy" />
+                    
+                    <td>${task.id}</td>
+                    <td>${task.description}</td>
+                    <td id="status-of-task-${task.id}">${task.complete ? "Complete" : "To be done"}</td>
+                    <td id="date-of-completion-for-task-${task.id}">
+                        <c:if test="${not empty task.dateOfCompletion}">
+                            <fmt:formatDate value="${task.dateOfCompletion.time}" pattern="dd/MM/yyyy" />
+                        </c:if>
                     </td>
-
                 </tr>
+
             </c:forEach>
 
         </tbody>
-
     </table>
-        
-<c:import url="../body-close.jsp" />
+            
+<c:import url="../body-close-tasks.jsp" />

@@ -15,13 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HelloWorldController {
+    
     @RequestMapping("/helloworld")
     public String execute(){
         return "hello";
     }
-@RequestMapping("/hellospring")
-public String execute (ModelMap modelMap){
-    modelMap.put("greeting","Hello Spring");
-    return "hello-spring";
-}
+    
+    @RequestMapping("/hellospring")
+    public String execute (ModelMap modelMap){
+        modelMap.put("greeting","Hello Spring");
+        return "hello-spring";
+    }
 }
