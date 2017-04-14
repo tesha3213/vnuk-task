@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/src/java/vn/edu/vnuk/tasks/controller/HelloWorldController.java</file>
-            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/hello.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/src/java/vn/edu/vnuk/tasks/model/Task.java</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/header.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/stylesheets.jsp</file>
             <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/task/edit.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/footer.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/scripts.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/src/java/vn/edu/vnuk/tasks/dao/TaskDao.java</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/task/index.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/body-open.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/src/java/vn/edu/vnuk/tasks/jdbc/ConnectionFactory.java</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/web.xml</file>
             <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/src/java/vn/edu/vnuk/tasks/controller/TasksController.java</file>
-            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/hello-spring.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/body-close.jsp</file>
+            <file>file:/C:/Users/Admin/Desktop/vnuk-tasks/web/WEB-INF/jsp/body-close-tasks.jsp</file>
         </group>
     </open-files>
 </project-private>
